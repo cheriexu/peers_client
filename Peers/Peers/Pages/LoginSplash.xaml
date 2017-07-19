@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Peers.Pages.LoginSplash"
+             xmlns:controls="clr-namespace:Peers.Controls;assembly=Peers"                
+             xmlns:local="clr-namespace:Peers"                
+             BackgroundColor="{x:Static local:Config.BackgroundColor}"
+             >
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" Spacing="15" Padding="40" >
+
+            <Label Text="Sign In" XAlign="Center" TextColor="{x:Static local:Config.ItemTextColor}" />
+            <Image Source="peerslogo.PNG" Margin="30"  />
+
+            <StackLayout VerticalOptions="StartAndExpand"  HorizontalOptions="FillAndExpand" Margin="0, 35, 0, 0" Orientation="Vertical" IsVisible="False">
+                <StackLayout HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static local:Config.ItemSeparatorColor}" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                    <Image HeightRequest ="24" WidthRequest="24" Source="icon_email.png" Margin="12,5,5,5" />
+                    <controls:CustomEntry x:Name="usernameEntry"  HorizontalOptions="FillAndExpand" Unfocused="OnUserNameEntryUnfocused" BackgroundColor="{x:Static local:Config.BackgroundColor}" TextColor="{x:Static local:Config.EntryTextColor}" Placeholder="Email Address"  />
+                </StackLayout>
+                <StackLayout HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static local:Config.ItemSeparatorColor}" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Image HeightRequest ="24" WidthRequest="24" Source="icon_password.png"  Margin="12,5,5,5" />
+                    <controls:CustomEntry x:Name="passwordEntry"  HorizontalOptions="FillAndExpand" IsPassword="true" BackgroundColor="{x:Static local:Config.BackgroundColor}" TextColor="{x:Static local:Config.EntryTextColor}" Placeholder="Password" />
+                    <Image x:Name="loginFinger"  Source="icon_fingerprint.png" HeightRequest="24" WidthRequest="24" IsVisible="True" />
+                </StackLayout>
+                <StackLayout HeightRequest="1" HorizontalOptions="FillAndExpand" BackgroundColor="{x:Static local:Config.ItemSeparatorColor}" />
+            </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" Margin="0, 45, 0, 0" IsVisible="False" >
+                <Button x:Name="loginButton" Text="Sign In" Clicked="OnLoginButtonClicked" BackgroundColor="{x:Static local:Config.ButtonBackgroundColor}" TextColor="{x:Static local:Config.ButtonTextColor}"  />
+                <Label x:Name="forgotPassword" Text="Forgot your password?" XAlign="Center" TextColor="{x:Static local:Config.ItemTextColor}" />
+            </StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand" Margin="0, 45, 0, 0" >
+                <Button x:Name="loginButtonFB" Text="Sign In with Facebook" Clicked="OnFBLoginButtonClicked" BackgroundColor="{x:Static local:Config.ButtonBackgroundColorFB}" TextColor="{x:Static local:Config.ButtonTextColor}"  />
+                <Button x:Name="loginButtonGoogle"  Text="Sign In with Google" Clicked="OnGoogleLoginButtonClicked" BackgroundColor="{x:Static local:Config.ButtonBackgroundColorGoogle}" TextColor="{x:Static local:Config.ButtonTextColor}"  />
+                <Button x:Name="loginButtonLinkedIn" Text="Sign In with LinkedIn" Clicked="OnLinkedInLoginButtonClicked" BackgroundColor="{x:Static local:Config.ButtonBackgroundColorLinkedIn}" TextColor="{x:Static local:Config.ButtonTextColor}"  />
+                <Label x:Name="messageLabel" XAlign="Center" TextColor="{x:Static local:Config.MessageTextColor}" />
+                <Label x:Name="environment" Text="" XAlign="Center" TextColor="{x:Static local:Config.ItemTextColor}" IsVisible="False" />
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+
+
+
+
+</ContentPage>

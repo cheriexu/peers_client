@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>336bc55e-1dd5-425d-b026-d5d1a5929a6f</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Peers</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Config.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\LoginHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\OAuthHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\RequestHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\SessionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Settings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\StringUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\UserMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Cookie.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FacebookProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GoogleInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LinkedInOAuthResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LinkedInProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Response.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPageFB.xaml.cs">
+      <DependentUpon>LoginPageFB.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPageGoogle.xaml.cs">
+      <DependentUpon>LoginPageGoogle.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPageLinkedIn.xaml.cs">
+      <DependentUpon>LoginPageLinkedIn.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginSplash.xaml.cs">
+      <DependentUpon>LoginSplash.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ListItemCell.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)GettingStarted.Xamarin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\LoginPageFB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\LoginSplash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\LoginPageGoogle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\LoginPageLinkedIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

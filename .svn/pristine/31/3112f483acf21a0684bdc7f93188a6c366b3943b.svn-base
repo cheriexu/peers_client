@@ -1,0 +1,66 @@
+﻿using Peers.Models;
+using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Peers.Helpers
+{
+    public class LoginHelper
+    {
+
+        public static async Task<Response> UserLoginTrack(String email, String firstName, String lastName)
+        {
+            SetHttpsCertificateCallback();
+
+            var uri = new Uri(Config.ServiceEndpoint + "logintrack");
+
+//            String postData = "{'email':'" + email + "','firstName':'" + firstName + "','lastName':'"+ lastName +"'}";
+           // String postData = "{\"loginTrackRequest\":{\"Email\":\"" + email + "\", \"FirstName\":\"" + firstName + "\",\"LastName\":\"" + lastName + "\"}}";
+            // {"Email":"shudecek@gmail.com", "FirstName":"Stan","LastName":"hudecek"}
+            String postData = "{\"Email\":\"" + email + "\", \"FirstName\":\"" + firstName + "\",\"LastName\":\"" + lastName + "\"}";
+
+            try
+            {
+                var parsed = await RequestHelper.RequestData<Response>(uri, postData);
+                return parsed;
+
+            }
+            catch (WebException)
+            {
+
+                return new Response()
+                {
+                    IsSuccess = false,
+                    Message = UserMessage.ServiceConnectionError
+                };
+            }
+            catch (Exception e)
+            {
+                return new Response()
+                {
+                    IsSuccess = false,
+                    Message = "ok"
+                };
+            }
+        }
+
+        private static void SetHttpsCertificateCallback()
+        {
+            System.Net.ServicePointManager.ServerCertificateValidationCallback =
+                                        new System.Net.Security.RemoteCertificateValidationCallback((sender, certificate, chain, policyErrors) =>
+                                        {
+                                            if (policyErrors == System.Net.Security.SslPolicyErrors.None)
+                                                return true;
+                                            else if (policyErrors == System.Net.Security.SslPolicyErrors.RemoteCertificateNameMismatch || Config.ServiceBase.Contains("//dev"))
+                                            {
+                                                // return true for dev only
+                                                return true;
+                                            }
+                                            return false;
+                                        });
+        }
+
+    }
+}

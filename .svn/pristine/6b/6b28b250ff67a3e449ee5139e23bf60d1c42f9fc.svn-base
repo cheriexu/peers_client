@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
+             xmlns:local="clr-namespace:Peers"            
+             x:Class="Peers.Pages.MainMenu">
+  <TabbedPage.Children>
+    <ContentPage Title="Home" Icon="Monkeyicon.png">
+      <ListView x:Name="homeItems" RowHeight="130" BackgroundColor="White" SeparatorColor="{x:Static local:Config.BackgroundColor}" />        
+    </ContentPage>
+    <ContentPage Title="Profile" Icon="Monkeyicon.png" >
+    <StackLayout>
+                <Label Text="Major"
+           VerticalOptions="CenterAndExpand" />
+            <Entry x:Name= "Major" Text="Enter your major" VerticalOptions="CenterAndExpand"/>
+            <Label Text="Autobiography"
+           VerticalOptions="CenterAndExpand" />
+                <Editor  x:Name= "Bio" Text="Enter a short description of yourself" VerticalOptions="CenterAndExpand"  />
+            <Picker x:Name="Gender" Title="Select the Gender you Identify With">
+              <Picker.Items>
+                  <x:String>Female</x:String>
+                  <x:String>Male</x:String>
+                  <x:String>Other</x:String>
+                
+    </Picker.Items>
+    </Picker>
+     <!--ListView x:Name="groupItems" RowHeight="130" BackgroundColor="White" SeparatorColor="{x:Static local:Config.BackgroundColor}" /-->    
+     </StackLayout>
+        </ContentPage>
+    <ContentPage Title="Projects" Icon="Monkeyicon.png" >
+        <ListView x:Name="projectItems" RowHeight="130" BackgroundColor="White" SeparatorColor="{x:Static local:Config.BackgroundColor}" />
+    </ContentPage>
+    <ContentPage Title="Messages" Icon="Monkeyicon.png" >
+        <ListView x:Name="messageItems" RowHeight="130" BackgroundColor="White" SeparatorColor="{x:Static local:Config.BackgroundColor}" />
+    </ContentPage>
+    <ContentPage Title="Peers" Icon="Monkeyicon.png" >
+        <ListView x:Name="peerItems" RowHeight="130" BackgroundColor="White" SeparatorColor="{x:Static local:Config.BackgroundColor}" />
+    </ContentPage>
+    </TabbedPage.Children>
+</TabbedPage>
